@@ -6,6 +6,7 @@ int main()
 {
   char input;
   vector <string> list;
+  int itemlist = 0;
 
   do
   {
@@ -23,8 +24,18 @@ int main()
         cin.ignore();
         getline(cin,item);
         list.push_back(item);
+        itemlist++;
     }
   }while( input != 'q' && input != 'Q' );
-    
+
+  if( itemlist == 0 )
+  {
+    cout<<"\nThere are no items on the list.";
+  }
+  else
+  {
+    cout<<"\nThere are "<<itemlist<<" items on the list.";
+  }
+
   return 0;
 }
